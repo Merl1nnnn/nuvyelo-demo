@@ -19,7 +19,7 @@ jobs:
           persist-credentials: false
       - name: Verify and unpack the static build
         run: |
-          echo '6a8c035020a61ab9f4aec09e5a90a259db23d5db82d0684e66057e242300d901  nuvyelo-site.zip' | sha256sum --check --strict
+          echo '6f7a475a8bc8419075f822d8fe5f17214f7aefdeab40295095a8bb2d43bd3944  nuvyelo-site.zip' | sha256sum --check --strict
           echo '1b7ffda9044607a3d3ab7e2255bd8b789bbbce6ad82c2e2b39604f6874af37c7  nuvyelo-desktop.zip' | sha256sum --check --strict
           unzip -q nuvyelo-site.zip -d _site
           unzip -q nuvyelo-desktop.zip -d _site
