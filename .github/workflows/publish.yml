@@ -23,6 +23,8 @@ jobs:
           echo '1b7ffda9044607a3d3ab7e2255bd8b789bbbce6ad82c2e2b39604f6874af37c7  nuvyelo-desktop.zip' | sha256sum --check --strict
           unzip -q nuvyelo-site.zip -d _site
           unzip -q nuvyelo-desktop.zip -d _site
+          echo '03edb14848d814ac38e9b1f481aad34ccf9cf6a301f48ce706740fb8d34ae7a5  nuvyelo-editor-update.zip' | sha256sum --check --strict
+          unzip -oq nuvyelo-editor-update.zip -d _site
           test -f _site/index.html
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
