@@ -21,7 +21,7 @@ jobs:
         run: |
           echo '6f7a475a8bc8419075f822d8fe5f17214f7aefdeab40295095a8bb2d43bd3944  nuvyelo-site.zip' | sha256sum --check --strict
           echo '1b7ffda9044607a3d3ab7e2255bd8b789bbbce6ad82c2e2b39604f6874af37c7  nuvyelo-desktop.zip' | sha256sum --check --strict
-          echo '918a9ecb4917c293df6de27e3c4a944e0698c45a127d3f29ebd22408831caa7a  nuvyelo-editor-update.zip' | sha256sum --check --strict
+          echo 'fea72f862c813b3d1d0c691002e1f1c44c1645270c187b23887fb2d5e8dd1a7f  nuvyelo-editor-update.zip' | sha256sum --check --strict
           unzip -q nuvyelo-site.zip -d _site -x 'assets/index-*' index.html BUILD-INFO.json
           unzip -q nuvyelo-editor-update.zip -d _site
           unzip -q nuvyelo-desktop.zip -d _site
