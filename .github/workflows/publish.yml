@@ -20,11 +20,12 @@ jobs:
       - name: Verify and unpack the static build
         run: |
           echo '6f7a475a8bc8419075f822d8fe5f17214f7aefdeab40295095a8bb2d43bd3944  nuvyelo-site.zip' | sha256sum --check --strict
-          echo '1b7ffda9044607a3d3ab7e2255bd8b789bbbce6ad82c2e2b39604f6874af37c7  nuvyelo-desktop.zip' | sha256sum --check --strict
+          cat desktop-archive-parts/part-* > "$RUNNER_TEMP/nuvyelo-desktop.zip"
+          echo "cea0d8556ac509921e6efeae1fddcb06581ec98720afaa75f61f03a0df8b2bc0  $RUNNER_TEMP/nuvyelo-desktop.zip" | sha256sum --check --strict
           echo 'fea72f862c813b3d1d0c691002e1f1c44c1645270c187b23887fb2d5e8dd1a7f  nuvyelo-editor-update.zip' | sha256sum --check --strict
           unzip -q nuvyelo-site.zip -d _site -x 'assets/index-*' index.html BUILD-INFO.json
           unzip -q nuvyelo-editor-update.zip -d _site
-          unzip -q nuvyelo-desktop.zip -d _site
+          unzip -q "$RUNNER_TEMP/nuvyelo-desktop.zip" -d _site
           test -f _site/index.html
       - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
